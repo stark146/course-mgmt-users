@@ -1,0 +1,25 @@
+server:
+  port: 8081
+  context-path: users-ms
+
+spring:
+  application:
+    name: users-ms
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  #liquibase configuration
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+#validate: validate the schema, makes no changes to the database.
+#update: update the schema.
+#create: creates the schema, destroying previous data.
+#create-drop: drop the schema at the end of the session
+#none: is all other cases.
